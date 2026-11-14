@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Single-page landing at `/` composed from `src/components/site/*`; nav uses in-page anchors because the design is one continuous page.
+- All site copy, services and contact data live in `src/lib/site-content.ts` so content edits never touch layout code.
+- Contact form has no backend: it validates with `src/lib/contato-form.ts` and opens WhatsApp with a prefilled message.
+- The site is dark-only; colors come from tokens in `src/styles.css` (no light/dark toggle).

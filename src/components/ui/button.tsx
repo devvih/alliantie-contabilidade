@@ -15,6 +15,9 @@ const buttonVariants = cva(
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
+        gold: "rounded-full border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground",
+        goldSolid:
+          "rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-gold)] hover:bg-primary-glow",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
@@ -22,6 +25,8 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        pill: "h-11 rounded-full px-6 text-sm font-semibold",
+        pillSm: "h-9 rounded-full px-5 text-xs font-semibold",
       },
     },
     defaultVariants: {
