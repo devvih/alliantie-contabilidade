@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -29,20 +30,21 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
           {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.to}
+              to={l.to}
               className="text-sm text-foreground/85 transition-colors hover:text-primary"
+              activeProps={{ className: "text-primary" }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <Button asChild variant="gold" size="pillSm" className="hidden md:inline-flex">
-          <a href="#contato">
+          <Link to="/contato">
             Fale Conosco <ArrowRight />
-          </a>
+          </Link>
         </Button>
 
         <Sheet open={open} onOpenChange={setOpen}>
@@ -58,19 +60,19 @@ export function Header() {
             <SheetTitle className="sr-only">Menu</SheetTitle>
             <nav className="mt-12 flex flex-col gap-6 px-2" aria-label="Menu mobile">
               {navLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
+                <Link
+                  key={l.to}
+                  to={l.to}
                   onClick={() => setOpen(false)}
                   className="font-display text-2xl text-foreground transition-colors hover:text-primary"
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
               <Button asChild variant="goldSolid" size="pill" className="mt-4">
-                <a href="#contato" onClick={() => setOpen(false)}>
+                <Link to="/contato" onClick={() => setOpen(false)}>
                   Fale Conosco <ArrowRight />
-                </a>
+                </Link>
               </Button>
             </nav>
           </SheetContent>

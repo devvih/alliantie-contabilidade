@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import leao from "@/assets/hero-leao.jpg.asset.json";
@@ -39,12 +40,12 @@ export function Hero() {
           </p>
           <div className="animate-rise mt-8 flex flex-wrap gap-3" style={{ animationDelay: "360ms" }}>
             <Button asChild variant="gold" size="pill">
-              <a href="#contato">
+              <Link to="/contato">
                 Fale Conosco <ArrowRight />
-              </a>
+              </Link>
             </Button>
             <Button asChild variant="ghost" size="pill" className="text-foreground/80">
-              <a href="#servicos">Conheça os serviços</a>
+              <Link to="/servicos">Conheça os serviços</Link>
             </Button>
           </div>
         </div>

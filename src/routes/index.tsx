@@ -1,53 +1,44 @@
-import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
-import { Contato } from "@/components/site/Contato";
-import { Footer } from "@/components/site/Footer";
-import { Header } from "@/components/site/Header";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Diferenciais } from "@/components/site/Diferenciais";
+import { Faq } from "@/components/site/Faq";
 import { Hero } from "@/components/site/Hero";
+import { LinksUteis } from "@/components/site/LinksUteis";
+import { OndeEstamos } from "@/components/site/OndeEstamos";
 import { ParaQuem } from "@/components/site/ParaQuem";
-import { Parceiros } from "@/components/site/Parceiros";
+import { ParceirosCarrossel } from "@/components/site/ParceirosCarrossel";
 import { QuemSomos } from "@/components/site/QuemSomos";
 import { Servicos } from "@/components/site/Servicos";
-import { WhatsAppFlutuante } from "@/components/site/WhatsAppFlutuante";
+import { pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "Alliantie Assessoria | Contabilidade com excelência, confiança e fé" },
-      {
-        name: "description",
-        content:
-          "Contabilidade, fiscal, departamento pessoal, abertura de empresas e consultoria com atendimento próximo e responsável.",
-      },
-      { property: "og:title", content: "Alliantie Assessoria | Mais que assessoria" },
-      {
-        property: "og:description",
-        content:
-          "Cuidamos da sua contabilidade com excelência, responsabilidade e proximidade, guiados pela fé em Deus.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    meta: pageMeta(
+      "Alliantie Assessoria | Contabilidade com excelência, confiança e fé",
+      "Contabilidade, fiscal, departamento pessoal, abertura de empresas e consultoria com atendimento próximo e responsável.",
+    ),
   }),
   component: Index,
 });
 
 function Index() {
-  const [assunto, setAssunto] = useState("");
-
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Servicos onEscolher={setAssunto} />
-        <ParaQuem />
-        <QuemSomos />
-        <Parceiros onEscolher={setAssunto} />
-        <Contato assunto={assunto} onAssunto={setAssunto} />
-      </main>
-      <Footer />
-      <WhatsAppFlutuante />
+      <Hero />
+      <Servicos />
+      <div className="-mt-12 flex justify-center bg-background pb-24">
+        <Button asChild variant="gold" size="pill">
+          <Link to="/servicos">Ver todos os serviços <ArrowRight /></Link>
+        </Button>
+      </div>
+      <ParaQuem />
+      <Diferenciais />
+      <QuemSomos />
+      <ParceirosCarrossel />
+      <Faq />
+      <LinksUteis />
+      <OndeEstamos />
     </>
   );
 }

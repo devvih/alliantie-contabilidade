@@ -14,13 +14,8 @@ const infos = [
   { icone: Clock, rotulo: "Atendimento", valor: contato.horario },
 ];
 
-export function Contato({
-  assunto,
-  onAssunto,
-}: {
-  assunto: string;
-  onAssunto: (v: string) => void;
-}) {
+export function Contato() {
+  const [assunto, onAssunto] = useState("");
   const [form, setForm] = useState({ nome: "", telefone: "", email: "", mensagem: "" });
   const [erros, setErros] = useState<Partial<Record<keyof ContatoForm, string>>>({});
 
@@ -41,7 +36,7 @@ export function Contato({
   }
 
   return (
-    <section id="contato" className="bg-surface py-24 sm:py-32">
+    <section id="contato" className="bg-background py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr]">
         <Reveal>
           <SectionHeading eyebrow="Vamos conversar" title="Fale" highlight="Conosco" align="left">

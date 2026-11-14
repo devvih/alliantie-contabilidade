@@ -30,7 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 ## Project rules
-- Single-page landing at `/` composed from `src/components/site/*`; nav uses in-page anchors because the design is one continuous page.
+- Multi-page site: each page is a route in `src/routes/*` composed from shared sections in `src/components/site/*`; Header/Footer/WhatsApp live in `__root.tsx`.
 - All site copy, services and contact data live in `src/lib/site-content.ts` so content edits never touch layout code.
-- Contact form has no backend: it validates with `src/lib/contato-form.ts` and opens WhatsApp with a prefilled message.
+- Contact form (on /contato) has no backend: it validates with `src/lib/contato-form.ts` and opens WhatsApp; the map is a keyless Google Maps embed of the address.
 - The site is dark-only; colors come from tokens in `src/styles.css` (no light/dark toggle).
