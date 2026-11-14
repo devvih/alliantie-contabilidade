@@ -1,5 +1,7 @@
 import { ArrowRight, Award, HeartHandshake, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { parceiros, whatsappLink } from "@/lib/site-content";
+import { ParceiroLogo } from "./ParceirosCarrossel";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -21,7 +23,7 @@ const beneficios = [
   },
 ];
 
-export function Parceiros({ onEscolher }: { onEscolher: (assunto: string) => void }) {
+export function Parceiros() {
   return (
     <section id="parceiros" className="bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
@@ -48,16 +50,20 @@ export function Parceiros({ onEscolher }: { onEscolher: (assunto: string) => voi
           ))}
         </div>
 
+        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {parceiros.map((p, i) => (
+            <Reveal key={p.nome} delay={(i % 3) * 100}>
+              <ParceiroLogo p={p} />
+              <p className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">{p.area}</p>
+            </Reveal>
+          ))}
+        </div>
+
         <Reveal className="mt-12 flex justify-center">
-          <Button
-            variant="gold"
-            size="pill"
-            onClick={() => {
-              onEscolher("Quero ser parceiro");
-              document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Quero ser parceiro <ArrowRight />
+          <Button asChild variant="gold" size="pill">
+            <a href={whatsappLink("Olá! Quero ser parceiro da Alliantie.")} target="_blank" rel="noreferrer">
+              Quero ser parceiro <ArrowRight />
+            </a>
           </Button>
         </Reveal>
       </div>

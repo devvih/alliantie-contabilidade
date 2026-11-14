@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { contato, navLinks, whatsappLink } from "@/lib/site-content";
 import { Logo } from "./Logo";
 
@@ -16,12 +17,17 @@ export function Footer() {
           <h3 className="text-xs uppercase tracking-[0.2em] text-primary">Navegação</h3>
           <ul className="mt-4 space-y-2">
             {navLinks.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="text-sm text-foreground/80 hover:text-primary">
+              <li key={l.to}>
+                <Link to={l.to} className="text-sm text-foreground/80 hover:text-primary">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
+            <li>
+              <Link to="/perguntas-frequentes" className="text-sm text-foreground/80 hover:text-primary">
+                Perguntas Frequentes
+              </Link>
+            </li>
           </ul>
         </nav>
         <div>
@@ -37,6 +43,7 @@ export function Footer() {
                 {contato.email}
               </a>
             </li>
+            <li>{contato.endereco}</li>
             <li>{contato.horario}</li>
           </ul>
         </div>

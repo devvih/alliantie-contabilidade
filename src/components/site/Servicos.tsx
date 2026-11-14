@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { servicos, type Servico } from "@/lib/site-content";
+import { servicos, whatsappLink, type Servico } from "@/lib/site-content";
 import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
@@ -23,11 +23,11 @@ const spans = [
   "md:col-span-7",
 ];
 
-export function Servicos({ onEscolher }: { onEscolher: (servico: string) => void }) {
+export function Servicos({ id = "servicos" }: { id?: string }) {
   const [ativo, setAtivo] = useState<Servico | null>(null);
 
   return (
-    <section id="servicos" className="bg-background py-24 sm:py-32">
+    <section id={id} className="bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <SectionHeading eyebrow="Trabalhando com você" title="Nossos" highlight="Serviços">
@@ -78,17 +78,14 @@ export function Servicos({ onEscolher }: { onEscolher: (servico: string) => void
                   </li>
                 ))}
               </ul>
-              <Button
-                variant="goldSolid"
-                size="pill"
-                className="mt-4 w-full"
-                onClick={() => {
-                  onEscolher(ativo.titulo);
-                  setAtivo(null);
-                  document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Quero falar sobre {ativo.titulo.toLowerCase()} <ArrowRight />
+              <Button asChild variant="goldSolid" size="pill" className="mt-4 w-full">
+                <a
+                  href={whatsappLink(`Olá! Quero falar sobre ${ativo.titulo}.`)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Quero falar sobre {ativo.titulo.toLowerCase()} <ArrowRight />
+                </a>
               </Button>
             </>
           )}
