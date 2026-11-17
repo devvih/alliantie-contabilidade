@@ -89,7 +89,7 @@ export function ParaQuem({ variant = "split" }: { variant?: "split" | "timeline"
         </div>
 
         <Reveal className="relative lg:-mr-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]" delay={150}>
-          <div className="gold-frame -inset-y-5 -left-5 right-0 rounded-l-sm" aria-hidden />
+          <div className="gold-frame -inset-y-5 -left-5 right-0 rounded-l-sm mt-10 lg:mt-16" aria-hidden />
           <img
             src={escritorio.url}
             alt="Mesa de escritório elegante com caneca, notebook e caderno sob luz dourada"
