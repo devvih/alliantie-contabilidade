@@ -8,7 +8,7 @@ export const Route = createFileRoute("/para-quem")({
   head: () => ({
     meta: pageMeta(
       "Para Quem | Alliantie Assessoria",
-      "Atendemos MEI, autônomos, profissionais liberais, pequenas e médias empresas e quem vai empreender.",
+      "Atendemos MEIs, autônomos, prestadores de serviços, comércio e empresas de todos os portes, do primeiro CNPJ à consolidação.",
     ),
   }),
   component: () => (

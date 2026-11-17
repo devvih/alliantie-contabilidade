@@ -1,21 +1,20 @@
 import {
   Briefcase,
   Calculator,
+  FileCheck,
   FileText,
+  FolderOpen,
   Handshake,
   RefreshCw,
   Users,
   type LucideIcon,
 } from "lucide-react";
 
-/**
- * Dados de contato da Alliantie.
- * ATENÇÃO: valores provisórios — substituir pelos dados reais do escritório.
- */
+/** Dados oficiais informados no briefing da Alliantie. */
 export const contato = {
-  whatsapp: "5511999999999", // apenas números, com DDI 55 + DDD
-  telefoneExibicao: "(11) 99999-9999",
-  email: "contato@alliantie.com.br",
+  whatsapp: "5511987310052", // apenas números, com DDI 55 + DDD
+  telefoneExibicao: "(11) 98731-0052",
+  email: "contato.alliatie@gmail.com",
   endereco: "Av. Cruzeiro do Sul, 925 - Rochdale, Osasco - SP, 06226-006",
   horario: "Segunda a sexta, 8h às 18h",
   instagram: "https://instagram.com/",
@@ -106,6 +105,18 @@ export const servicos: Servico[] = [
     ],
   },
   {
+    titulo: "Declarações",
+    resumo:
+      "Preparação e acompanhamento das declarações da sua empresa com organização e atenção aos prazos.",
+    icone: FileCheck,
+    detalhes: [
+      "Declarações e obrigações exigidas para o seu negócio",
+      "Conferência das informações antes de cada entrega",
+      "Orientação sobre documentos e prazos",
+      "Suporte próximo durante todo o processo",
+    ],
+  },
+  {
     titulo: "Assessoria e Consultoria",
     resumo:
       "Orientação próxima e estratégica para ajudar sua empresa a tomar decisões com mais segurança.",
@@ -117,48 +128,71 @@ export const servicos: Servico[] = [
       "Um parceiro de confiança para crescer com você",
     ],
   },
+  {
+    titulo: "Orientação Documental",
+    resumo:
+      "Orientação prática para você organizar, preparar e enviar os documentos à contabilidade.",
+    icone: FolderOpen,
+    detalhes: [
+      "Explicação clara dos documentos necessários",
+      "Orientação para organizar a rotina de envio",
+      "Padronização das informações da empresa",
+      "Acompanhamento próximo para tirar dúvidas",
+    ],
+  },
 ];
 
 export const publicos = [
   {
-    titulo: "MEI e Autônomos",
-    texto: "Formalize seu trabalho e mantenha o CNPJ em dia, sem complicação.",
+    titulo: "MEIs e Autônomos",
+    texto: "Abertura, regularização, declaração anual e orientação tributária sem complicação.",
   },
   {
-    titulo: "Profissionais Liberais",
-    texto: "Médicos, advogados, dentistas e consultores pagando o imposto justo.",
+    titulo: "Micro e Pequenas Empresas",
+    texto: "Contabilidade, folha e impostos para empresas de serviços, comércio e pequenos negócios.",
   },
   {
-    titulo: "Pequenas e Médias Empresas",
-    texto: "Rotina contábil, fiscal e trabalhista completa para você focar no negócio.",
+    titulo: "Prestadores de Serviços",
+    texto: "Apoio fiscal e contábil para médicos, dentistas, advogados, arquitetos, consultores e profissionais de tecnologia.",
   },
   {
-    titulo: "Quem vai Empreender",
-    texto: "Do primeiro passo à abertura, com orientação em cada etapa.",
+    titulo: "Comércio",
+    texto: "Atendimento para lojas físicas, e-commerces, distribuidores e varejistas.",
+  },
+  {
+    titulo: "Médias e Grandes Empresas",
+    texto: "Contabilidade complexa, planejamento tributário, folha, obrigações acessórias e análise financeira.",
+  },
+  {
+    titulo: "Empresas que Estão Começando",
+    texto: "Abertura de CNPJ, escolha do regime tributário e estruturação inicial do negócio.",
   },
 ];
+
+export const missao =
+  "Oferecer produtos e serviços de excelência, gerando valor para nossos clientes, colaboradores e parceiros, conduzindo nossos negócios com integridade, honestidade e responsabilidade, e sendo uma influência positiva na sociedade para a glória de Deus.";
+
+export const visao =
+  "Ser uma empresa reconhecida pela excelência, confiança e integridade, crescendo de forma sustentável e deixando um legado positivo na vida das pessoas, nos negócios e na sociedade.";
 
 export const valores = [
-  {
-    titulo: "Excelência",
-    texto: "Fazemos cada entrega com cuidado, precisão e atenção aos detalhes.",
-  },
-  {
-    titulo: "Confiança",
-    texto: "Transparência e responsabilidade em cada número da sua empresa.",
-  },
-  {
-    titulo: "Fé",
-    texto: "Guiados por Deus, servimos com integridade, propósito e proximidade.",
-  },
+  { titulo: "Fé em Deus", texto: "Reconhecer Deus como fonte de sabedoria e propósito." },
+  { titulo: "Integridade", texto: "Fazer o que é certo, mesmo quando ninguém está vendo." },
+  { titulo: "Honestidade e Transparência", texto: "Construir relações baseadas na verdade e na confiança." },
+  { titulo: "Excelência", texto: "Buscar qualidade e melhoria contínua em tudo o que fazemos." },
+  { titulo: "Respeito às Pessoas", texto: "Tratar clientes, colaboradores e parceiros com dignidade." },
+  { titulo: "Serviço", texto: "Colocar as necessidades das pessoas no centro das nossas decisões." },
+  { titulo: "Responsabilidade", texto: "Cumprir compromissos e assumir as consequências das nossas decisões." },
+  { titulo: "Generosidade", texto: "Usar os recursos e resultados do negócio também para abençoar pessoas e contribuir com a sociedade." },
+  { titulo: "Justiça", texto: "Agir com equilíbrio, ética e imparcialidade." },
+  { titulo: "Família e Comunidade", texto: "Valorizar relacionamentos saudáveis e contribuir para o desenvolvimento das pessoas." },
 ];
 
-
 export const diferenciais = [
-  { titulo: "Atendimento próximo", texto: "Você fala com quem cuida da sua empresa, sem robôs nem filas." },
-  { titulo: "Prazos em dia", texto: "Controle rigoroso das obrigações para evitar multas e surpresas." },
-  { titulo: "Linguagem clara", texto: "Explicamos os números de um jeito simples, para você decidir melhor." },
-  { titulo: "Valores cristãos", texto: "Integridade, ética e transparência guiam cada atendimento." },
+  { titulo: "Qualidade", texto: "Cada entrega é feita com dedicação, cuidado e comprometimento." },
+  { titulo: "Disposição para ajudar", texto: "Buscamos sempre a melhor forma de atuar e orientar cada cliente." },
+  { titulo: "Atendimento próximo", texto: "Você fala com quem conhece a sua empresa e acompanha a sua rotina." },
+  { titulo: "Confiança", texto: "Relações duradouras construídas com responsabilidade e transparência." },
 ];
 
 export const faq = [
@@ -192,7 +226,7 @@ export const parceiros: { nome: string; area: string; logo?: string }[] = [
 ];
 
 export const trajetoria = [
-  { titulo: "O começo", texto: "Nasce a Alliantie, com o propósito de servir empresas com excelência e fé." },
-  { titulo: "Crescimento", texto: "Ampliamos a equipe e os serviços para acompanhar cada etapa dos clientes." },
-  { titulo: "Hoje", texto: "Uma aliança com empresas de diversos segmentos, em todo o Brasil." },
+  { titulo: "2008", texto: "Deixamos o emprego para construir um caminho próprio, começando em casa e com apenas um cliente." },
+  { titulo: "Confiança", texto: "O escritório cresceu de forma sólida pela divulgação boca a boca e pela qualidade do atendimento." },
+  { titulo: "Hoje", texto: "Seguimos com perseverança e gratidão, construindo relacionamentos duradouros com nossos clientes." },
 ];

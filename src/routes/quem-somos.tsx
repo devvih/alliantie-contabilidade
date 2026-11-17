@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import simbolo from "@/assets/alliantie-simbolo.png.asset.json";
+import logo from "@/assets/logo-alliantie-completa.png.asset.json";
 import { CtaFaleConosco } from "@/components/site/CtaFaleConosco";
+import { MissaoVisao } from "@/components/site/MissaoVisao";
 import { PageHero } from "@/components/site/PageHero";
 import { QuemSomos } from "@/components/site/QuemSomos";
 import { Reveal } from "@/components/site/Reveal";
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/quem-somos")({
   head: () => ({
     meta: pageMeta(
       "Quem Somos | Alliantie Assessoria",
-      "Conheça a história, a missão e os valores da Alliantie: contabilidade com excelência, confiança e fé.",
+      "Conheça a história da Alliantie desde 2008, nossa missão, visão e valores cristãos.",
     ),
   }),
   component: QuemSomosPage,
@@ -25,6 +26,7 @@ function QuemSomosPage() {
         Uma contabilidade que vai além dos números: uma aliança verdadeira com cada cliente.
       </PageHero>
       <QuemSomos />
+      <MissaoVisao />
       <section className="bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
@@ -46,15 +48,22 @@ function QuemSomosPage() {
       </section>
       <section className="bg-surface py-24 sm:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
-          <Reveal className="flex aspect-[4/3] items-center justify-center rounded-md border border-primary/30 bg-card">
-            <img src={simbolo.url} alt="Símbolo da Alliantie" className="h-48 w-auto" loading="lazy" />
+          <Reveal className="flex aspect-[4/3] items-center justify-center rounded-md border border-primary/30 bg-card p-8">
+            <img
+              src={logo.url}
+              alt="Alliantie Assessoria — três alianças entrelaçadas"
+              className="h-auto w-full max-w-md"
+              loading="lazy"
+              width={2400}
+              height={519}
+            />
           </Reveal>
           <Reveal delay={120}>
             <SectionHeading eyebrow="Identidade" title="Nossa" highlight="Marca" align="left" />
             <p className="mt-6 text-base leading-relaxed text-foreground/85">
-              O nome Alliantie vem de aliança: um compromisso firme, construído com confiança. O leão
-              representa força, coragem e liderança, e o dourado traduz a excelência que buscamos em
-              cada entrega.
+              Alliantie significa aliança e nasceu dos nossos princípios cristãos. As três alianças
+              entrelaçadas representam Pai, Filho e Espírito Santo — o elo mais forte do mundo — e
+              traduzem a confiança que construímos com cada cliente.
             </p>
           </Reveal>
         </div>

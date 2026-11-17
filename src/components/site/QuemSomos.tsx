@@ -1,4 +1,4 @@
-import simbolo from "@/assets/alliantie-simbolo.png.asset.json";
+import simbolo from "@/assets/logo-alliantie.svg.asset.json";
 import { valores } from "@/lib/site-content";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
@@ -29,22 +29,25 @@ export function QuemSomos() {
             <SectionHeading eyebrow="Nossa essência" title="Quem" highlight="Somos" align="left" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/85">
               <p>
-                A Alliantie nasceu do desejo de oferecer uma contabilidade que vai além dos números:
-                uma aliança verdadeira com cada cliente.
+                A história da Alliantie começou em 2008, com a decisão corajosa de deixar o emprego
+                e construir um caminho próprio na contabilidade. Começamos em casa, com apenas um
+                cliente, crescendo pela confiança e pela divulgação boca a boca.
               </p>
               <p className="text-muted-foreground">
-                Unimos conhecimento técnico, atendimento próximo e valores cristãos para que você
-                tenha segurança nas decisões e tranquilidade para fazer o seu negócio crescer.
+                Mais do que números e obrigações, construímos relacionamentos duradouros e uma
+                trajetória marcada por perseverança, credibilidade, qualidade e comprometimento.
               </p>
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-20 grid gap-px overflow-hidden rounded-md border border-border/70 bg-border/70 sm:grid-cols-3">
+        <div className="mt-20 grid gap-px overflow-hidden rounded-md border border-border/70 bg-border/70 sm:grid-cols-2 lg:grid-cols-5">
           {valores.map((v, i) => (
-            <Reveal key={v.titulo} delay={i * 120} className="bg-card p-8">
-              <span className="font-display text-sm lining-nums text-primary">0{i + 1}</span>
-              <h3 className="mt-3 font-display text-2xl font-bold uppercase text-foreground">
+            <Reveal key={v.titulo} delay={(i % 5) * 80} className="bg-card p-6">
+              <span className="font-display text-sm lining-nums text-primary">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 font-display text-xl font-bold uppercase text-foreground">
                 {v.titulo}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.texto}</p>
