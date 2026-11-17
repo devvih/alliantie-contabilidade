@@ -17,8 +17,13 @@ export const Route = createFileRoute("/servicos")({
       <PageHero eyebrow="Trabalhando com você" title="Nossos" highlight="Serviços">
         Soluções contábeis completas para cuidar da sua empresa com segurança e proximidade.
       </PageHero>
-      <Servicos />
-      <Diferenciais eyebrow="Nossos diferenciais" title="Por que escolher a" highlight="Alliantie" />
+      <Servicos variant="detailed" />
+      <Diferenciais
+        eyebrow="Nossos diferenciais"
+        title="Por que escolher a"
+        highlight="Alliantie"
+        variant="columns"
+      />
       <CtaFaleConosco />
     </>
   ),

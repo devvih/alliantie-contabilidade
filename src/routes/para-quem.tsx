@@ -16,7 +16,7 @@ export const Route = createFileRoute("/para-quem")({
       <PageHero eyebrow="Para cada etapa do seu negócio" title="Quem" highlight="Atendemos">
         Do primeiro CNPJ à empresa consolidada, acompanhamos você com a mesma dedicação.
       </PageHero>
-      <ParaQuem />
+      <ParaQuem variant="timeline" />
       <CtaFaleConosco />
     </>
   ),
