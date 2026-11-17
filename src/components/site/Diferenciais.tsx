@@ -28,7 +28,7 @@ export function Diferenciais({
           </Reveal>
           <div className="mt-14 grid gap-10 sm:grid-cols-2 md:mt-16 md:grid-cols-4 md:gap-0">
             {diferenciais.map((d, i) => {
-              const Icone = icones[i];
+              const Icone = icones[i] ?? BadgeCheck;
               return (
                 <Reveal
                   key={d.titulo}
