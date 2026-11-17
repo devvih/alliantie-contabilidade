@@ -17,7 +17,6 @@ export const contato = {
   email: "contato.alliatie@gmail.com",
   endereco: "Av. Cruzeiro do Sul, 925 - Rochdale, Osasco - SP, 06226-006",
   horario: "Segunda a sexta, 8h às 18h",
-  instagram: "https://instagram.com/",
 };
 
 export function whatsappLink(mensagem?: string) {
