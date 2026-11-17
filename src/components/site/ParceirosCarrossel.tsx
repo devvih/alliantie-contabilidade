@@ -3,12 +3,13 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { parceiros } from "@/lib/site-content";
+import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
-export function ParceiroLogo({ p }: { p: (typeof parceiros)[number] }) {
+export function ParceiroLogo({ p, className }: { p: (typeof parceiros)[number]; className?: string }) {
   return (
-    <div className="flex aspect-[3/2] items-center justify-center rounded-md border border-border/70 bg-card p-6">
+    <div className={cn("flex aspect-[3/2] items-center justify-center rounded-md border border-border/70 bg-card p-6", className)}>
       {p.logo ? (
         <img src={p.logo} alt={p.nome} className="max-h-full w-auto object-contain" loading="lazy" />
       ) : (

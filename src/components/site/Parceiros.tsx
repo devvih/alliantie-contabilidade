@@ -1,27 +1,10 @@
-import { ArrowRight, Award, HeartHandshake, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { parceiros, whatsappLink } from "@/lib/site-content";
+import { cn } from "@/lib/utils";
 import { ParceiroLogo } from "./ParceirosCarrossel";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
-
-const beneficios = [
-  {
-    icone: HeartHandshake,
-    titulo: "Relação de confiança",
-    texto: "Parcerias construídas com transparência, respeito e valores em comum.",
-  },
-  {
-    icone: TrendingUp,
-    titulo: "Crescimento conjunto",
-    texto: "Indicações, projetos e soluções que geram valor para os dois lados.",
-  },
-  {
-    icone: Award,
-    titulo: "Excelência no atendimento",
-    texto: "Seus clientes recebem o mesmo cuidado que oferecemos aos nossos.",
-  },
-];
 
 export function Parceiros() {
   return (
@@ -34,33 +17,42 @@ export function Parceiros() {
           </SectionHeading>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {beneficios.map((b, i) => (
-            <Reveal key={b.titulo} delay={i * 120}>
-              <div className="service-card h-full items-start text-left">
-                <span className="flex size-12 items-center justify-center rounded-full border border-primary/40">
-                  <b.icone className="size-5 text-primary" strokeWidth={1.6} aria-hidden />
-                </span>
-                <h3 className="mt-6 font-display text-lg font-bold uppercase tracking-wide text-foreground">
-                  {b.titulo}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.texto}</p>
-              </div>
-            </Reveal>
-          ))}
+        <div className="mt-16 space-y-20 sm:mt-20 sm:space-y-28">
+          {parceiros.map((p, i) => {
+            const invertido = i % 2 === 1;
+
+            return (
+              <Reveal key={p.nome}>
+                <article className="grid items-center gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+                  <ParceiroLogo
+                    p={p}
+                    className={cn("aspect-[4/3] bg-surface p-10", invertido && "md:order-2")}
+                  />
+                  <div className={cn(invertido && "md:order-1")}>
+                    <p className="eyebrow">{p.area}</p>
+                    <h3 className="heading-display mt-5 text-3xl sm:text-4xl">{p.nome}</h3>
+                    <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+                      Uma parceria construída com transparência, respeito e valores em comum para
+                      oferecer ainda mais suporte ao seu negócio.
+                    </p>
+                    <Button asChild variant="gold" size="pill" className="mt-8">
+                      <a
+                        href={whatsappLink(`Olá! Quero saber mais sobre a parceria com ${p.nome}.`)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Fale conosco <ArrowRight />
+                      </a>
+                    </Button>
+                  </div>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
 
-        <div className="mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {parceiros.map((p, i) => (
-            <Reveal key={p.nome} delay={(i % 3) * 100}>
-              <ParceiroLogo p={p} />
-              <p className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">{p.area}</p>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal className="mt-12 flex justify-center">
-          <Button asChild variant="gold" size="pill">
+        <Reveal className="mt-20 flex justify-center border-t border-border/70 pt-12">
+          <Button asChild variant="goldSolid" size="pill">
             <a href={whatsappLink("Olá! Quero ser parceiro da Alliantie.")} target="_blank" rel="noreferrer">
               Quero ser parceiro <ArrowRight />
             </a>

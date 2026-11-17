@@ -10,5 +10,6 @@
 - [x] Links úteis na página inicial
 - [x] História, missão, visão, valores, públicos e serviços atualizados com o briefing
 - [x] Logo oficial aplicada no site e nos ícones do navegador
+- [x] Ajustar páginas Serviços, Para Quem e Parceiros aos wireframes enviados
 - [ ] Logos reais dos parceiros (aguardando imagens da cliente)
 - [ ] Revisão final das respostas do FAQ (textos ainda provisórios)
