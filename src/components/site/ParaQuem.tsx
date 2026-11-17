@@ -37,11 +37,11 @@ export function ParaQuem() {
         </div>
 
         <Reveal className="relative lg:-mr-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]" delay={150}>
-          <div className="gold-frame -inset-y-5 -left-5 right-0 rounded-l-sm lg:translate-y-1/2" aria-hidden />
+          <div className="gold-frame -inset-y-5 -left-5 right-0 rounded-l-sm" aria-hidden />
           <img
             src={escritorio.url}
             alt="Mesa de escritório elegante com caneca, notebook e caderno sob luz dourada"
-            className="relative aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[520px] lg:self-center lg:translate-y-1/2"
+            className="relative aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[520px]"
             loading="lazy"
             width={1672}
             height={941}
