@@ -111,7 +111,7 @@ export function Contato() {
                   autoComplete="tel"
                   maxLength={20}
                   value={form.telefone}
-                  onChange={(e) => set("telefone")(mascararTelefone(e.target.value, form.telefone))}
+                  onChange={(e) => set("telefone")(mascararTelefone(e.target.value))}
                   placeholder="(11) 98731-0052"
                 />
               </Campo>

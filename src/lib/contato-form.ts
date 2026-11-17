@@ -45,17 +45,12 @@ function formatarTelefone(digitos: string) {
 }
 
 /**
- * Mantém o campo no formato (11) 98731-0052 enquanto a pessoa digita.
- * `anterior` é o valor já formatado antes da edição; serve para que apagar
- * um separador (o ")" ou o "-") apague junto o dígito da frente.
+ * Mantém o campo no formato (11) 98731-0052 enquanto a pessoa digita:
+ * aceita qualquer jeito de escrever (com ponto, traço, espaço ou colado)
+ * e nunca deixa passar mais de 11 números.
  */
-export function mascararTelefone(valor: string, anterior = "") {
-  const digitos = valor.replace(/\D/g, "");
-  const digitosAnteriores = anterior.replace(/\D/g, "");
-  if (anterior && valor.length < anterior.length && digitos.length === digitosAnteriores.length) {
-    return formatarTelefone(digitos.slice(0, -1));
-  }
-  return formatarTelefone(digitos.slice(0, MAX_DIGITOS_TELEFONE));
+export function mascararTelefone(valor: string) {
+  return formatarTelefone(valor.replace(/\D/g, "").slice(0, MAX_DIGITOS_TELEFONE));
 }
 
 export function montarMensagemContato(d: ContatoForm) {

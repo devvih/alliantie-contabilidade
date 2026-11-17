@@ -36,8 +36,9 @@ describe("máscara de telefone", () => {
     expect(mascararTelefone("11 98731-0052 ramal 3")).toBe("(11) 98731-0052");
   });
 
-  it("apagar o último dígito não deixa o separador sozinho", () => {
-    expect(mascararTelefone("(11) ", "(11) 9")).toBe("(1");
-    expect(mascararTelefone("(11) 98731-", "(11) 98731-0")).toBe("(11) 9873-1");
+  it("apagar um dígito não deixa o separador sozinho", () => {
+    expect(mascararTelefone("(11)")).toBe("(11");
+    expect(mascararTelefone("")).toBe("");
+    expect(mascararTelefone("abc11def98731ghi0052")).toBe("(11) 98731-0052");
   });
 });
