@@ -33,7 +33,6 @@ export function validarContato(
 }
 
 export function montarMensagemContato(d: ContatoForm) {
-  return [
     `Olá, Alliantie! Meu nome é ${d.nome}.`,
     d.assunto && `Assunto: ${d.assunto}`,
     `Telefone: ${d.telefone}`,
