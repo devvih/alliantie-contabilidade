@@ -6,5 +6,7 @@
 - [x] Parceiros em carrossel (logos reais ainda aguardando imagens)
 - [x] Fale Conosco com mapa do escritório no lugar do formulário
 - [x] Endereço real do escritório
-- [ ] WhatsApp e e-mail reais (aguardando cliente)
+- [ ] Substituir textos provisórios pelas informações do briefing
+- [ ] Aplicar a logo oficial enviada e atualizar o favicon
+- [x] WhatsApp e e-mail reais
 - [x] Links úteis na página inicial
