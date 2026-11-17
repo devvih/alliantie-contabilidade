@@ -28,10 +28,7 @@ export function ParaQuem({ variant = "split" }: { variant?: "split" | "timeline"
                   className="relative mb-12 last:mb-0 md:mb-0 md:grid md:min-h-52 md:grid-cols-2 md:gap-20"
                 >
                   <span
-                    className={cn(
-                      "absolute -left-[2.1875rem] top-2 size-2.5 rounded-full border-2 border-background bg-primary md:top-3",
-                      esquerda ? "md:-right-11 md:left-auto" : "md:-left-11",
-                    )}
+                    className="absolute -left-[2.1875rem] top-2 size-2.5 rounded-full border-2 border-background bg-primary md:left-1/2 md:top-3 md:-translate-x-1/2"
                     aria-hidden
                   />
                   <div
