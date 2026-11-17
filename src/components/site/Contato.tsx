@@ -3,7 +3,12 @@ import { Clock, Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { contato, servicos, whatsappLink } from "@/lib/site-content";
-import { montarMensagemContato, validarContato, type ContatoForm } from "@/lib/contato-form";
+import {
+  mascararTelefone,
+  montarMensagemContato,
+  validarContato,
+  type ContatoForm,
+} from "@/lib/contato-form";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -106,8 +111,8 @@ export function Contato() {
                   autoComplete="tel"
                   maxLength={20}
                   value={form.telefone}
-                  onChange={(e) => set("telefone")(e.target.value)}
-                  placeholder="(00) 00000-0000"
+                  onChange={(e) => set("telefone")(mascararTelefone(e.target.value))}
+                  placeholder="(11) 98731-0052"
                 />
               </Campo>
               <Campo label="E-mail" erro={erros.email}>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { montarMensagemContato, validarContato } from "@/lib/contato-form";
+import { mascararTelefone, montarMensagemContato, validarContato } from "@/lib/contato-form";
 
 const base = { nome: "Maria Souza", telefone: "(11) 98888-7777", email: "", assunto: "", mensagem: "" };
 
@@ -20,5 +20,25 @@ describe("formulário de contato", () => {
     const msg = montarMensagemContato({ ...base, assunto: "Fiscal" });
     expect(msg).toContain("Assunto: Fiscal");
     expect(msg).toContain("Maria Souza");
+  });
+});
+
+describe("máscara de telefone", () => {
+  it("forma celular e fixo enquanto a pessoa digita", () => {
+    expect(mascararTelefone("11")).toBe("(11");
+    expect(mascararTelefone("119")).toBe("(11) 9");
+    expect(mascararTelefone("11987310052")).toBe("(11) 98731-0052");
+    expect(mascararTelefone("1132310052")).toBe("(11) 3231-0052");
+  });
+
+  it("aceita colagem e ignora pontos, espaços e traços", () => {
+    expect(mascararTelefone("(11) 98731.0052")).toBe("(11) 98731-0052");
+    expect(mascararTelefone("11 98731-0052 ramal 3")).toBe("(11) 98731-0052");
+  });
+
+  it("apagar um dígito não deixa o separador sozinho", () => {
+    expect(mascararTelefone("(11)")).toBe("(11");
+    expect(mascararTelefone("")).toBe("");
+    expect(mascararTelefone("abc11def98731ghi0052")).toBe("(11) 98731-0052");
   });
 });

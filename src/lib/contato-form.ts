@@ -32,6 +32,27 @@ export function validarContato(
   return { ok: false, erros };
 }
 
+const MAX_DIGITOS_TELEFONE = 11;
+
+function formatarTelefone(digitos: string) {
+  if (!digitos) return "";
+  const ddd = digitos.slice(0, 2);
+  if (digitos.length <= 2) return `(${ddd}`;
+  const corpo = digitos.slice(2);
+  if (corpo.length <= 4) return `(${ddd}) ${corpo}`;
+  const separador = corpo.length <= 8 ? 4 : 5;
+  return `(${ddd}) ${corpo.slice(0, separador)}-${corpo.slice(separador)}`;
+}
+
+/**
+ * Mantém o campo no formato (11) 98731-0052 enquanto a pessoa digita:
+ * aceita qualquer jeito de escrever (com ponto, traço, espaço ou colado)
+ * e nunca deixa passar mais de 11 números.
+ */
+export function mascararTelefone(valor: string) {
+  return formatarTelefone(valor.replace(/\D/g, "").slice(0, MAX_DIGITOS_TELEFONE));
+}
+
 export function montarMensagemContato(d: ContatoForm) {
   return [
     `Olá, Alliantie! Meu nome é ${d.nome}.`,
