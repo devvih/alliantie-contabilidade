@@ -47,7 +47,7 @@ export function QuemSomos() {
               <span className="font-display text-sm lining-nums text-primary">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 font-display text-lg font-bold uppercase leading-tight tracking-wide text-foreground sm:text-xl">
+              <h3 className="mt-4 font-display text-base font-bold uppercase leading-tight tracking-wide text-foreground sm:text-lg">
                 {v.titulo}
               </h3>
               <p className="mt-3 max-w-prose text-sm leading-relaxed text-muted-foreground">
