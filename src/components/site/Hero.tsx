@@ -1,14 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import leao from "@/assets/hero-leao.jpg.asset.json";
 
 export function Hero() {
   return (
     <section id="inicio" className="relative isolate overflow-hidden bg-background">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          src={leao.url}
+          src="/images/hero-leao.jpg"
           alt="Leão em perfil sobre fundo escuro, símbolo de força e liderança"
           className="animate-hero-zoom h-full w-full object-cover object-[50%_center] md:object-[70%_center]"
           width={1926}
