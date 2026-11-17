@@ -47,10 +47,12 @@ export function QuemSomos() {
               <span className="font-display text-sm lining-nums text-primary">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 font-display text-xl font-bold uppercase text-foreground">
+              <h3 className="mt-4 font-display text-lg font-bold uppercase leading-tight tracking-wide text-foreground sm:text-xl">
                 {v.titulo}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.texto}</p>
+              <p className="mt-3 max-w-prose text-sm leading-relaxed text-muted-foreground">
+                {v.texto}
+              </p>
             </Reveal>
           ))}
         </div>
