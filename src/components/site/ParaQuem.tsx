@@ -41,7 +41,7 @@ export function ParaQuem() {
           <img
             src={escritorio.url}
             alt="Mesa de escritório elegante com caneca, notebook e caderno sob luz dourada"
-            className="relative aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[520px]"
+            className="relative aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[520px] lg:self-center"
             loading="lazy"
             width={1672}
             height={941}
