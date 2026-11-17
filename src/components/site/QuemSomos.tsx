@@ -14,6 +14,17 @@ export function QuemSomos() {
       />
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+          <Reveal delay={150} className="flex items-center">
+            <figure className="border-l-2 border-primary pl-6">
+              <blockquote className="font-display text-2xl italic leading-snug text-foreground sm:text-3xl">
+                “Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.”
+              </blockquote>
+              <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-primary">
+                Provérbios 16:3
+              </figcaption>
+            </figure>
+          </Reveal>
+
           <Reveal>
             <SectionHeading eyebrow="Nossa essência" title="Quem" highlight="Somos" align="left" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-foreground/85">
@@ -26,17 +37,6 @@ export function QuemSomos() {
                 tenha segurança nas decisões e tranquilidade para fazer o seu negócio crescer.
               </p>
             </div>
-          </Reveal>
-
-          <Reveal delay={150} className="flex items-center">
-            <figure className="border-l-2 border-primary pl-6">
-              <blockquote className="font-display text-2xl italic leading-snug text-foreground sm:text-3xl">
-                “Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.”
-              </blockquote>
-              <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-primary">
-                Provérbios 16:3
-              </figcaption>
-            </figure>
           </Reveal>
         </div>
 
